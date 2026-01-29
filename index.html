@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Your Name] - Professional Portfolio</title>
+  <meta name="description" content="Professional portfolio and resume of [Your Name].">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container navbar-content">
+      <a href="#" class="logo" data-editable="true">[Your Name]</a>
+
+      <button class="menu-toggle" id="mobile-menu" aria-label="Toggle Menu">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <a href="#" class="btn btn-sm btn-gold" data-editable-pdf="true" download>[Download Resume]</a>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-container">
+      <div class="hero-content animate-fade-up">
+        <h1 data-editable="true">Hello, I'm <span class="highlight">[Your Name]</span></h1>
+        <h2 data-editable="true">[Your Professional Title]</h2>
+        <p data-editable="true">
+          A passionate professional dedicated to [Core Value or Field].
+          I specialize in [Skill 1], [Skill 2], and delivering impactful results in the [Industry Name] sector.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Get in Touch</a>
+          <a href="#experience" class="btn btn-outline">View Work</a>
+        </div>
+      </div>
+      <div class="hero-image animate-fade-up delay-1">
+        <div class="profile-photo-placeholder">
+          <!-- Generic Placeholder SVG -->
+          <img
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232C3E50'/%3E%3Ccircle cx='50' cy='40' r='15' fill='%2318BC9C'/%3E%3Cpath d='M25 80 Q50 50 75 80' stroke='%2318BC9C' stroke-width='4' fill='none'/%3E%3Ctext x='50' y='92' font-family='sans-serif' font-size='8' fill='%23ffffff' text-anchor='middle'%3EClick to Upload%3C/text%3E%3C/svg%3E"
+            alt="Profile Photo" data-editable-image="true">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2>About Me</h2>
+        <div class="line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text animate-fade-up">
+          <h3 data-editable="true">My Journey</h3>
+          <p data-editable="true">
+            [Write a compelling bio here. Focus on your background, your education, and what drives you professionally.
+            Mention key achievements and your career philosophy.]
+          </p>
+          <p data-editable="true">
+            [Add a second paragraph about your soft skills, leadership style, or personal interests that align with your
+            career goals.]
+          </p>
+
+          <div class="education-block">
+            <h4>Education</h4>
+            <div data-editable="true">
+              <p class="university">[University Name]</p>
+              <p>[Degree Program], [Year]</p>
+              <p>Honors: [Honors/Awards]</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-skills animate-fade-up delay-1">
+          <div class="skills-card">
+            <h3>Core Competencies</h3>
+
+            <div class="skill-group">
+              <h4>Professional Skills</h4>
+              <div class="tags" data-editable="true">
+                <span class="tag">Strategic Planning</span>
+                <span class="tag">Market Analysis</span>
+                <span class="tag">Project Management</span>
+                <span class="tag">Public Speaking</span>
+                <span class="tag">Leadership</span>
+              </div>
+            </div>
+
+            <div class="skill-group">
+              <h4>Tools & Technologies</h4>
+              <div class="tags" data-editable="true">
+                <span class="tag">Microsoft Office</span>
+                <span class="tag">Google Suite</span>
+                <span class="tag">Data Analytics Tools</span>
+                <span class="tag">CRM Systems</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section bg-light" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <h2>Professional Experience</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="experience-grid">
+        <!-- Job 1 -->
+        <div class="experience-card animate-fade-up">
+          <div class="exp-header">
+            <div>
+              <h3 data-editable="true">[Job Title]</h3>
+              <p class="company" data-editable="true">[Company / Organization Name]</p>
+            </div>
+            <div class="exp-meta" data-editable="true">
+              <p>[Location]</p>
+              <p>[Start Date] – [End Date]</p>
+            </div>
+          </div>
+          <div class="exp-body" data-editable="true">
+            <ul>
+              <li>[Key achievement or responsibility. Start with a strong action verb.]</li>
+              <li>[Another success metric or project lead.]</li>
+              <li>[Collaborated with X team to achieve Y result.]</li>
+            </ul>
+          </div>
+          <div class="tech-stack" data-editable="true">
+            <span>Skill A</span>
+            <span>Skill B</span>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="experience-card animate-fade-up delay-1">
+          <div class="exp-header">
+            <div>
+              <h3 data-editable="true">[Previous Job Title]</h3>
+              <p class="company" data-editable="true">[Company / Organization Name]</p>
+            </div>
+            <div class="exp-meta" data-editable="true">
+              <p>[Location]</p>
+              <p>[Start Date] – [End Date]</p>
+            </div>
+          </div>
+          <div class="exp-body" data-editable="true">
+            <ul>
+              <li>[Key achievement or responsibility.]</li>
+              <li>[Managed X budget or Y team.]</li>
+              <li>[Implemented Z initiative.]</li>
+            </ul>
+          </div>
+          <div class="tech-stack" data-editable="true">
+            <span>Skill C</span>
+            <span>Skill D</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Experience Button (only visible in edit mode) -->
+      <div class="text-center" style="margin-top: 2rem;">
+        <button id="add-experience-btn" class="btn btn-gold hidden" style="display: none;">
+          + Add Experience
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Competitions and Awards Section -->
+  <section class="section" id="awards">
+    <div class="container">
+      <div class="section-header">
+        <h2 data-editable="true">Competitions and Awards</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="experience-grid awards-grid">
+        <!-- Example Award -->
+        <div class="experience-card animate-fade-up">
+          <div class="exp-header">
+            <div>
+              <h3 data-editable="true">[Award Name / Title]</h3>
+              <p class="company" data-editable="true">[Issuing Organization / Event]</p>
+            </div>
+            <div class="exp-meta" data-editable="true">
+              <p>[Location]</p>
+              <p>[Date Received]</p>
+            </div>
+          </div>
+          <div class="exp-body" data-editable="true">
+            <p>[Brief description of the award, criteria, or what you did to win it.]</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Award Button (only visible in edit mode) -->
+      <div class="text-center" style="margin-top: 2rem;">
+        <button id="add-award-btn" class="btn btn-gold hidden" style="display: none;">
+          + Add Competition/Award
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects / Portfolio Section -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2>Key Projects</h2>
+        <div class="line"></div>
+      </div>
+
+      <!-- Horizontal Scrollable Carousel -->
+      <div class="projects-carousel">
+        <!-- Project 1 -->
+        <div class="experience-card project-card">
+          <h3 data-editable="true">[Project Title A]</h3>
+          <p class="company" data-editable="true">[Project Subtitle / Context]</p>
+          <div class="spacer" style="height: 1rem;"></div>
+          <div class="project-image-container"
+            style="margin-bottom: 1rem; height: 150px; background: #eee; border-radius: 4px; overflow:hidden;">
+            <!-- Placeholder Image -->
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23e0e0e0'/%3E%3Ctext x='50%25' y='50%25' font-family='sans-serif' font-size='20' fill='%23999' text-anchor='middle' dy='.3em'%3EProject Image%3C/text%3E%3C/svg%3E"
+              style="width: 100%; height: 100%; object-fit: cover;" alt="Project A" data-editable-image="true">
+          </div>
+          <div class="exp-body" data-editable="true">
+            <p>[Brief description of the project. What was the goal? How was it achieved?]</p>
+          </div>
+          <div class="tech-stack" data-editable="true">
+            <span>Strategy</span>
+            <span>Research</span>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="experience-card project-card">
+          <h3 data-editable="true">[Project Title B]</h3>
+          <p class="company" data-editable="true">[Project Subtitle / Context]</p>
+          <div class="spacer" style="height: 1rem;"></div>
+          <div class="project-image-container"
+            style="margin-bottom: 1rem; height: 150px; background: #eee; border-radius: 4px; overflow:hidden;">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23e0e0e0'/%3E%3Ctext x='50%25' y='50%25' font-family='sans-serif' font-size='20' fill='%23999' text-anchor='middle' dy='.3em'%3EProject Image%3C/text%3E%3C/svg%3E"
+              style="width: 100%; height: 100%; object-fit: cover;" alt="Project B" data-editable-image="true">
+          </div>
+          <div class="exp-body" data-editable="true">
+            <p>[Brief description of the project. What was the outcome? What tools were used?]</p>
+          </div>
+          <div class="tech-stack" data-editable="true">
+            <span>Analysis</span>
+            <span>Design</span>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="experience-card project-card">
+          <h3 data-editable="true">[Project Title C]</h3>
+          <p class="company" data-editable="true">[Project Subtitle / Context]</p>
+          <div class="spacer" style="height: 1rem;"></div>
+          <div class="project-image-container"
+            style="margin-bottom: 1rem; height: 150px; background: #eee; border-radius: 4px; overflow:hidden;">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 400 200'%3E%3Crect width='400' height='200' fill='%23e0e0e0'/%3E%3Ctext x='50%25' y='50%25' font-family='sans-serif' font-size='20' fill='%23999' text-anchor='middle' dy='.3em'%3EProject Image%3C/text%3E%3C/svg%3E"
+              style="width: 100%; height: 100%; object-fit: cover;" alt="Project C" data-editable-image="true">
+          </div>
+          <div class="exp-body" data-editable="true">
+            <p>[Description of a third project to demonstrate versatility.]</p>
+          </div>
+          <div class="tech-stack" data-editable="true">
+            <span>Development</span>
+            <span>Launch</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-dots" id="carousel-dots">
+        <!-- Dots generated by JS -->
+      </div>
+
+      <!-- Add Project Button (only visible in edit mode) -->
+      <div class="text-center" style="margin-top: 2rem;">
+        <button id="add-project-btn" class="btn btn-gold hidden" style="display: none;">
+          + Add Project
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section bg-dark text-white" id="contact">
+    <div class="container contact-container">
+      <div class="contact-header">
+        <h2>Let's Connect</h2>
+        <div class="line" style="background-color: var(--color-secondary);"></div>
+        <br>
+        <p data-editable="true">
+          I am currently open to opportunities in [Industry/Role].
+          Feel free to reach out via email or connect with me on LinkedIn.
+        </p>
+      </div>
+      <div class="contact-actions">
+        <a href="mailto:email@example.com" class="btn btn-gold" data-editable-link="true">
+          Email Me
+        </a>
+        <a href="https://linkedin.com" class="btn btn-outline" style="color: white; border-color: white;"
+          data-editable-link="true">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Raptor. All rights reserved.</p>
+      <div style="margin-top: 10px; opacity: 0.3; font-size: 0.8rem;">
+        <a href="#" id="admin-trigger">Admin</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Admin Bar (Hidden by default) -->
+  <div id="admin-bar" class="admin-bar hidden">
+    <div class="container admin-bar-content">
+      <div>
+        <strong>Edit Mode</strong>
+      </div>
+      <div style="display: flex; gap: 1rem;">
+        <button id="save-btn" class="btn btn-sm btn-gold">Save Changes</button>
+        <button id="cancel-btn" class="btn btn-sm btn-outline"
+          style="border-color: white; color: white;">Discard</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
