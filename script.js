@@ -87,10 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Update active dot on scroll
+
         carousel.addEventListener('scroll', () => {
+            // Re-query cards to handle dynamic additions/deletions
+            const currentCards = carousel.querySelectorAll('.experience-card');
+            if (currentCards.length === 0) return;
+
             const scrollLeft = carousel.scrollLeft;
-            const cardWidth = projectCards[0].offsetWidth + parseInt(getComputedStyle(carousel).gap);
-            const activeIndex = Math.round(scrollLeft / cardWidth);
+            const cardWidth = currentCards[0].offsetWidth + parseInt(getComputedStyle(carousel).gap || '0');
+
+            let activeIndex = Math.round(scrollLeft / cardWidth);
+
+            // Force last dot active if scrolled to the very end
+            // Use a small buffer (e.g. 5px) to account for fractional pixel rendering
+            if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
+                activeIndex = currentCards.length - 1;
+            }
 
             dotsContainer.querySelectorAll('.dot').forEach((dot, index) => {
                 dot.classList.toggle('active', index === activeIndex);
