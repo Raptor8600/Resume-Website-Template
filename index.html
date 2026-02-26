@@ -1,11 +1,13 @@
+<!--Created by Raptor8600-->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Your Name] - Professional Portfolio</title>
-  <meta name="description" content="Professional portfolio and resume of [Your Name].">
+  <title>Resume Template</title>
+  <meta name="description" content="Professional Resume Template">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +23,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="read-only">
 
   <!-- Navigation -->
   <nav class="navbar">
@@ -40,7 +42,19 @@
         <li>
           <a href="#" class="btn btn-sm btn-gold" data-editable-pdf="true" download>[Download Resume]</a>
         </li>
-
+        <!-- Auth Controls -->
+        <li id="auth-controls">
+          <button id="login-btn" class="btn btn-sm btn-outline" style="margin-left: 1rem;">Log In</button>
+          <div id="user-display" class="navbar-user hidden">
+            <button id="upgrade-btn" class="btn btn-sm btn-gold hidden" style="margin-right:0.5rem;">Upgrade</button>
+            <span class="user-email"></span>
+            <button id="delete-account-btn" class="btn btn-sm text-red-500"
+              style="border: none; padding: 0.2rem; margin-left:1rem; font-size:0.8rem;"
+              title="Delete Account">Delete</button>
+            <button id="logout-btn" class="btn btn-sm btn-outline" style="border: none; padding: 0.2rem;">Log
+              Out</button>
+          </div>
+        </li>
       </ul>
     </div>
   </nav>
@@ -65,7 +79,7 @@
           <!-- Generic Placeholder SVG -->
           <img
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%232C3E50'/%3E%3Ccircle cx='50' cy='40' r='15' fill='%2318BC9C'/%3E%3Cpath d='M25 80 Q50 50 75 80' stroke='%2318BC9C' stroke-width='4' fill='none'/%3E%3Ctext x='50' y='92' font-family='sans-serif' font-size='8' fill='%23ffffff' text-anchor='middle'%3EClick to Upload%3C/text%3E%3C/svg%3E"
-            alt="Profile Photo" data-editable-image="true">
+            alt="Profile" data-editable-image="true">
         </div>
       </div>
     </div>
@@ -191,7 +205,7 @@
 
       <!-- Add Experience Button (only visible in edit mode) -->
       <div class="text-center" style="margin-top: 2rem;">
-        <button id="add-experience-btn" class="btn btn-gold hidden" style="display: none;">
+        <button id="add-experience-btn" data-admin-only="true" class="btn btn-gold hidden" style="display:none;">
           + Add Experience
         </button>
       </div>
@@ -227,7 +241,7 @@
 
       <!-- Add Award Button (only visible in edit mode) -->
       <div class="text-center" style="margin-top: 2rem;">
-        <button id="add-award-btn" class="btn btn-gold hidden" style="display: none;">
+        <button id="add-award-btn" data-admin-only="true" class="btn btn-gold hidden" style="display:none;">
           + Add Competition/Award
         </button>
       </div>
@@ -312,7 +326,7 @@
 
       <!-- Add Project Button (only visible in edit mode) -->
       <div class="text-center" style="margin-top: 2rem;">
-        <button id="add-project-btn" class="btn btn-gold hidden" style="display: none;">
+        <button id="add-project-btn" data-admin-only="true" class="btn btn-gold hidden" style="display:none;">
           + Add Project
         </button>
       </div>
@@ -347,28 +361,101 @@
   <footer>
     <div class="container">
       <p>&copy; <span id="year">2026</span> Raptor. All rights reserved.</p>
+      <div style="margin-top: 10px; font-size: 0.8rem; color: #6B7C93; opacity: 0.8;">
+        Platform Developed by Raptor8600 | Built on CareerCraftr
+      </div>
       <div style="margin-top: 10px; opacity: 0.3; font-size: 0.8rem;">
-        <a href="#" id="admin-trigger">Admin</a>
+        <a href="#" id="admin-trigger" data-admin-only="true" style="display:none;">Admin</a>
       </div>
     </div>
   </footer>
 
   <!-- Admin Bar (Hidden by default) -->
-  <div id="admin-bar" class="admin-bar hidden">
+  <div id="admin-bar" class="admin-bar hidden" data-admin-only="true" style="display:none;">
     <div class="container admin-bar-content">
       <div>
         <strong>Edit Mode</strong>
       </div>
       <div style="display: flex; gap: 1rem;">
-        <button id="save-btn" class="btn btn-sm btn-gold">Save Changes</button>
-        <button id="cancel-btn" class="btn btn-sm btn-outline"
+        <button id="save-btn" class="btn btn-sm btn-gold" data-admin-only="true">Save Changes</button>
+        <button id="cancel-btn" class="btn btn-sm btn-outline" data-admin-only="true"
           style="border-color: white; color: white;">Discard</button>
       </div>
     </div>
   </div>
 
+  <!-- AUTH MODAL -->
+  <div id="auth-modal" class="auth-modal hidden">
+    <div class="auth-box">
+      <span id="auth-close" class="auth-close">&times;</span>
+      <h2 id="auth-title">Log In</h2>
+      <form id="auth-form">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="••••••••">
+        </div>
+        <button type="submit" id="auth-submit" class="btn btn-gold" style="width: 100%;">Log In</button>
+      </form>
+      <a id="auth-toggle" class="auth-toggle-link">Don't have an account? Sign Up</a>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div id="success-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="success-title">Resume Saved!</h2>
+        <button id="success-close" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Your resume has been successfully saved to the cloud.</p>
+        <p>You can share your resume using this public link:</p>
+        <div class="share-link-container">
+          <input type="text" id="share-link-input" readonly value="Generating...">
+          <button id="copy-link-btn" class="btn-primary">Copy</button>
+        </div>
+        <div class="modal-actions">
+          <a href="#" target="_blank" id="preview-link-btn" class="btn-outline">Open Public View</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WATERMARK -->
+  <div id="careercraftr-watermark" class="hidden">
+    Powered by <strong>CareerCraftr</strong> - Create your resume for free.
+  </div>
+
+  <!-- DEVELOPER INFO MODAL -->
+  <div id="dev-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>About CareerCraftr</h2>
+        <button id="dev-close" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>CareerCraftr</strong> is a professional interactive resume builder.</p>
+        <p>Developed by <strong>Raptor8600</strong>.</p>
+        <p>Version: 1.0.0 (Vanilla JS Edition)</p>
+        <hr>
+        <p>Features:</p>
+        <ul style="list-style:disc; margin-left:1.5rem;">
+          <li>Supabase Authentication & Storage</li>
+          <li>Real-time visual editor</li>
+          <li>Public shareable links</li>
+          <li>PDF Export</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js" defer></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>

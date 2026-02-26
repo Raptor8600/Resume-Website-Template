@@ -789,3 +789,297 @@ footer {
         gap: 1.5rem;
     }
 }
+
+/* AUTH MODAL STYLES */
+.auth-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    backdrop-filter: blur(5px);
+}
+
+.auth-box {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.auth-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #8899A6;
+}
+
+.auth-box h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-main);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #E1E8ED;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--color-secondary);
+    outline: none;
+}
+
+.auth-toggle-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--color-secondary);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.auth-toggle-link:hover {
+    text-decoration: underline;
+}
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-email {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    background: rgba(24, 188, 156, 0.1);
+
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+}
+
+/* READ ONLY MODE */
+body.read-only [data-editable],
+body.read-only [data-editable-image],
+body.read-only [data-editable-link],
+body.read-only [data-editable-pdf] {
+    pointer-events: none !important;
+    cursor: default !important;
+}
+
+/* ✅ Allow links to be clickable in read-only mode (email, LinkedIn, etc.) */
+body.read-only a[data-editable-link] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+body.read-only .btn-gold,
+body.read-only .btn-outline {
+    /* Optional: Hide buttons in read-only mode if they are for editing */
+}
+
+/* Hide Add Buttons explicitly in read-only */
+body.read-only #add-experience-btn,
+body.read-only #add-project-btn,
+body.read-only #add-award-btn,
+body.read-only .delete-card-btn {
+    display: none !important;
+}
+
+/* EDITOR TOOLBAR */
+.editor-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem 1rem;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+body.edit-active {
+    margin-top: 60px;
+    /* Push body down */
+}
+
+.toolbar-group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    border-right: 1px solid #eee;
+    padding-right: 1rem;
+}
+
+.toolbar-group:last-child {
+    border-right: none;
+}
+
+.editor-toolbar button {
+    background: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.editor-toolbar button:hover {
+    background-color: var(--color-bg-light);
+    border-color: #ddd;
+}
+
+.editor-toolbar select,
+.editor-toolbar input[type="color"] {
+    padding: 0.3rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* EDITOR SIDEBAR */
+.editor-sidebar {
+    position: fixed;
+    top: 60px;
+    /* Below Toolbar */
+    left: 0;
+    width: 200px;
+    height: calc(100% - 60px);
+    background-color: white;
+    border-right: 1px solid #eee;
+    padding: 1rem;
+    z-index: 1900;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+body.sidebar-active .editor-sidebar {
+    transform: translateX(0);
+}
+
+body.sidebar-active {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+}
+
+.editor-sidebar h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #8899A6;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.block-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    cursor: grab;
+    transition: all 0.2s;
+}
+
+.block-item:hover {
+    border-color: var(--color-secondary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.block-item:active {
+    cursor: grabbing;
+}
+
+/* SUCCESS MODAL EXTRAS */
+.share-link-container {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.share-link-container input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #f9f9f9;
+}
+
+.modal-actions {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+/* WATERMARK */
+#careercraftr-watermark {
+    text-align: center;
+    padding: 1rem;
+    background: #2C3E50;
+    color: white;
+    font-size: 0.8rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+
+
+/* ========================================= */
+/* HARD ADMIN LOCK (prevents Save-As leak) */
+/* ========================================= */
+
+/* Hide all admin-only UI by default */
+[data-admin-only="true"] {
+    display: none !important;
+}
+
+/* Only show admin UI when edit mode is active */
+body.edit-active [data-admin-only="true"] {
+    display: inline-flex !important;
+}
+
+/* If it's a container (like admin bar) */
+body.edit-active div[data-admin-only="true"] {
+    display: block !important;
+}
+
+/* Safety: admin-only UI should never show unless JS explicitly enables it */
+[data-admin-only="true"] {
+    display: none !important;
+}
