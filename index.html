@@ -40,7 +40,10 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
-          <a href="#" class="btn btn-sm btn-gold" data-editable-pdf="true" download>[Download Resume]</a>
+          <a id="resume-download" href="#" class="btn btn-sm btn-gold" data-editable-pdf="true" download="resume.pdf"
+            title="Click to upload or set resume in edit mode">
+            Download Resume
+          </a>
         </li>
         <!-- Auth Controls -->
         <li id="auth-controls">
@@ -365,7 +368,7 @@
         Platform Developed by Raptor8600 | Built on CareerCraftr
       </div>
       <div style="margin-top: 10px; opacity: 0.3; font-size: 0.8rem;">
-        <a href="#" id="admin-trigger" data-admin-only="true" style="display:none;">Admin</a>
+        <a href="#" id="admin-trigger">Admin</a>
       </div>
     </div>
   </footer>
@@ -376,10 +379,40 @@
       <div>
         <strong>Edit Mode</strong>
       </div>
-      <div style="display: flex; gap: 1rem;">
+      <div class="admin-actions">
+        <button id="theme-toggle-btn" class="btn btn-sm btn-outline" data-admin-only="true"
+          style="border-color: white; color: white;">
+          Theme
+        </button>
+
         <button id="save-btn" class="btn btn-sm btn-gold" data-admin-only="true">Save Changes</button>
+
         <button id="cancel-btn" class="btn btn-sm btn-outline" data-admin-only="true"
           style="border-color: white; color: white;">Discard</button>
+      </div>
+
+      <!-- Theme Panel (admin-only) -->
+      <div id="theme-panel" class="theme-panel hidden" data-admin-only="true">
+        <div class="theme-row">
+          <label for="theme-primary">Primary</label>
+          <input type="color" id="theme-primary" value="#2C3E50" />
+        </div>
+
+        <div class="theme-row">
+          <label for="theme-secondary">Accent</label>
+          <input type="color" id="theme-secondary" value="#18BC9C" />
+        </div>
+
+        <div class="theme-row">
+          <label for="theme-bg">Background</label>
+          <input type="color" id="theme-bg" value="#FFFFFF" />
+        </div>
+
+        <div class="theme-row theme-buttons">
+          <button id="theme-reset-btn" class="btn btn-sm btn-outline" style="border-color: white; color: white;">
+            Reset
+          </button>
+        </div>
       </div>
     </div>
   </div>

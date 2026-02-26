@@ -1083,3 +1083,48 @@ body.edit-active div[data-admin-only="true"] {
 [data-admin-only="true"] {
     display: none !important;
 }
+
+/* =========================
+   Theme Panel (Admin Mode)
+   ========================= */
+.admin-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.theme-panel {
+    margin-top: 0.75rem;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.theme-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 0.4rem 0;
+}
+
+.theme-row label {
+    color: white;
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+.theme-row input[type="color"] {
+    width: 44px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.theme-buttons {
+    justify-content: flex-end;
+}
